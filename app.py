@@ -8,7 +8,7 @@ st.set_page_config(
 )
 
 st.markdown("<h1>😈 Soy Lucy, tu asistente virtual</h1>", unsafe_allow_html=True)
-st.markdown("### 🔍 Busca información en internet Y 🎨 Crea imágenes")
+st.markdown("### 🔍 Busca información en internet o 🎨 Crea imágenes")
 
 consulta = st.text_input("¿Qué quieres saber o crear hoy?", placeholder="Ej: 'Busca información sobre Python' o 'Crea una imagen de un gato ninja'")
 
