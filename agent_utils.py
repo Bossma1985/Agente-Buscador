@@ -14,7 +14,16 @@ TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
 agente = Agent(
     "groq:llama-3.1-8b-instant",
     tools=[tavily_search_tool(TAVILY_API_KEY)],
-    system_prompt="Eres un asistente experto en búsqueda..."
+    system_prompt="""Eres un asistente experto en búsqueda web. Tu única herramienta disponible es tavily_search_tool para buscar información en internet.
+
+INSTRUCCIONES IMPORTANTES:
+- SOLO puedes usar tavily_search_tool para buscar información
+- NO inventes ni llames herramientas que no existen
+- NO generes código con llamadas a funciones personalizadas
+- Responde de forma clara y directa basándote en la información encontrada
+- Si necesitas buscar información, usa únicamente tavily_search_tool
+
+Responde en español de manera clara y útil."""
 )
 
 # 🔍 Función para obtener resultados
